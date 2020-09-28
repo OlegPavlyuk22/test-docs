@@ -146,25 +146,6 @@ paths:
                         description: contains HTTP code (200)
                         enum: [200]
                     required: [responseCode]
-
-        "401":
-          description: Missing or wrong authorization headers
-          headers:
-            WWW-Authenticate:
-              description: Authentication method that should be used to gain access to a resource
-              schema:
-                type: string
-              example: apiKey realm="Access to API"
-          content:
-            "application/json":
-              schema:
-                properties:
-                  responseCode:
-                    type: integer
-                    enum: [401]
-                  errorMessage:
-                    type: string
-                    example: Unauthorized
         "404":
           description: Application not found
           content:
